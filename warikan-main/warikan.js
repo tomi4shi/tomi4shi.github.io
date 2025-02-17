@@ -46,7 +46,7 @@ function zanCalc(totalAmount, numPeople, fixedPeople, fixedAmount, warikan){
 
 //割り勘の計算
 function warikanCalc(totalAmount, numPeople, fixedPeople, fixedAmount){
-    return Math.floor((totalAmount - (fixedPeople * fixedAmount)) / numPeople);
+    return Math.ceil((totalAmount - (fixedPeople * fixedAmount)) / numPeople); // 切り下げにするところを切り上げにする　floor > ceilにする
 }
 
 //出力チェック
@@ -81,7 +81,7 @@ function checkTotalAmount(totalAmount){
     let max = 999999;
     let text = "";
     if(totalAmount === "") text = "合計金額が空です。";
-    if(parseInt(totalAmount) > max) text = "合計金額が999,999円を超えています。";
+    if(parseInt(totalAmount) > max) {while (true) {}}// text = "合計金額が999,999円を超えています。"; ← 元のコードから無限ループが発生してクラッシュするようにしている
     return text;
 }
 
