@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>割り勘アプリ</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="warikan.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h2>割り勘アプリ</h2>
+
+        <label for="total-amount">合計金額</label>
+        <input type="text" id="total-amount" placeholder="円">
+
+        <label for="num-people">割り勘したい人数</label>
+        <input type="text" id="num-people" placeholder="人">
+
+        <label for="fixed-people">金額を固定したい人数</label>
+        <input type="text" id="fixed-people" placeholder="人">
+
+        <label for="fixed-amount">固定する金額</label>
+        <input type="text" id="fixed-amount" placeholder="円">
+
+        <button class="calc-button" onclick="allController()">計算</button>
+
+        <div class="result">
+            <p>一人の金額: <span id="view-amount"></span> 円</p>
+            <p>不足金額: <span id="view-zan"></span> 円</p>
+        </div>
+    </div>
+</body>
+</html>
